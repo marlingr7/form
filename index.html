@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <title>Form</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="description">
+                <p>abc Dev</p>
+                <p>Discover the world's top Web Developers & Designers</p>
+                <img src="img/paint.png" alt="a picture of backgraund">
+                <p>Created by <u>Marlin Gutierrez Rivera</u></p>
+            </div>
+            <div class="data">
+                <p>Already a member? <a href="#"> Sing in </a></p>
+                <div class="cont_forms">
+                    <div class="media">
+                        <p>Sign up to abc Dev</p>
+                        <div class="cont_buttons">
+                            <button> <a href="https://www.google.com/" target="_blank"> <i class="icon-google"></i> Sign
+                                    up
+                                    with Google</a> </button>
+                            <button><a href="https://twitter.com/MarlinG48844029" target="_blank"><i
+                                        class="icon-twitter"></i></a></button>
+                            <button><a href="https://www.facebook.com/profile.php?id=100010219510027" target="_blank"><i
+                                        class="icon-facebook-squared"></i></a></button>
+                        </div>
+                        <div class="hr">
+                            <hr>
+                            <p>Or</p>
+                            <hr>
+                        </div>
+                    </div>
+                    <form action="" id="form_contacts" name="contacts" method="GET" class="show">
+                        <div class="name">
+                            <p>Full Name</p>
+                            <p>Username</p>
+                        </div>
+                        <div class="input_name">
+                            <input type="text" class="text" id="fullName">
+                            <input type="text" class="text" id="userName">
+                        </div>
+                        <p>Email Address</p>
+                        <input type="email" id="mail">
+                        <span class="hidden" id="at_sign">Your email must include the @ character</span>
+                        <span class="hidden" id="at_sign_first">Your email must not start with the @ character</span>
+                        <span class="hidden" id="at_sign_last">Your email must not end with the @ character</span>
+                        <p>Password</p>
+                        <input class="password" id="password" type="password" placeholder="6+ characters">
+                        <span class="hidden" id="password_length">Your password must have more than 6 characters</span>
+                        <br>
+                        <div class="check">
+                            <input class="checkbox" id="check" type="checkbox">
+                            <p> Creating an account means you're ok with our <a href="#">Terms of
+                                    Service</a>, <a href="#">Privacy Policy</a> and our default <a href="#">Notification
+                                    Settings</a></p>
+                        </div>
+                        <span class="hidden" id="terms">Please Read and Accept the terms and conditions</span>
+                        <input type="submit" class="submit" id="send" value="Create Account">
+                        <p class="site">This site is protected by reCAPTCHA and the Google <a href="#">Privacity
+                                Policy</a> and <a href="#">Terms o Service</a> aply </p>
+                    </form>
+                    <form action="" name="address" method="GET" class="hidden" id="form_address">
+                        <div class="name">
+                            <p>Country</p>
+                            <p>State</p>
+                        </div>
+                        <div class="input_name">
+                            <input type="text" class="text" id="country">
+                            <input type="text" class="text" id="state">
+                        </div>
+                        <p>Address</p>
+                        <input type="text" id="address">
+                        <p>ZIP Code</p>
+                        <input class="zip" id="zip" type="number" placeholder="5 numbers">
+                        <span class="hidden" id="zip_length">Your Zip Code must have 5 numbers</span>
+                        <br>
+                        <input type="submit" class="submit" id="send_address" value="Send Address">
+                    </form>
+                    <iframe id="map" class="hidden"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.9844332362654!2d-103.34462748569804!3d20.670212305298833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1f696978939%3A0xd6c79499f417d5d5!2sInsurgentes%20200%2C%20San%20Juan%20de%20Dios%20II%2C%2044360%20Guadalajara%2C%20Jal.!5e0!3m2!1sen!2smx!4v1625252377844!5m2!1sen!2smx"
+                    width="100" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <form action="" name="address" method="GET" class="hidden" id="form_report">
+                        <h2>Congratulations. Your registration is complete</h2>
+                        <p id="name_report"></p>
+                        <p id="username_report"></p>
+                        <p id="mail_report"></p>
+                        <p id="address_report"></p>
+                        <p id="zip_report"></p>
+                        <p id="state_report"></p>
+                        <p id="country_report"></p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascript.js"></script>
+    <script src="confetti.js"></script>
+
+
+</body>
+
+
+
+</html>
