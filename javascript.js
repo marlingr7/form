@@ -1,36 +1,40 @@
-var send = document.getElementById("send"),
-sendAddress = document.getElementById("send_address");
+var send = document.getElementById("send");
+var sendAddress = document.getElementById("send_address");
+var sendCheck = document.getElementById("send_check");
+var returnName = document.getElementById("return_name");
+var returnAddress = document.getElementById("return_address");
 
-formContact = document.getElementById("form_contacts");
-formAddress = document.getElementById("form_address");
-formReport = document.getElementById("form_report");
+var formContact = document.getElementById("form_contacts");
+var formAddress = document.getElementById("form_address");
+var formCheck = document.getElementById("form_check");
+var formReport = document.getElementById("form_report");
 
-fullName = document.getElementById("fullName");
-userName = document.getElementById("userName");
-mail = document.getElementById("mail");
-password = document.getElementById("password");
-check = document.getElementById("check");
-country = document.getElementById("country");
-state = document.getElementById("state");
-address = document.getElementById("address");
-zipCode = document.getElementById("zip");
+var fullName = document.getElementById("fullName");
+var userName = document.getElementById("userName");
+var mail = document.getElementById("mail");
+var password = document.getElementById("password");
+var check = document.getElementById("check");
+var country = document.getElementById("country");
+var state = document.getElementById("state");
+var address = document.getElementById("address");
+var zipCode = document.getElementById("zip");
 
-atSign = document.getElementById("at_sign");
-atSignFirst = document.getElementById("at_sign_first");
-atSignLast = document.getElementById("at_sign_last");
-passwordLength = document.getElementById("password_length");
-terms = document.getElementById("terms");
-zipLength = document.getElementById("zip_length");
+var atSign = document.getElementById("at_sign");
+var atSignFirst = document.getElementById("at_sign_first");
+var atSignLast = document.getElementById("at_sign_last");
+var passwordLength = document.getElementById("password_length");
+var terms = document.getElementById("terms");
+var zipLength = document.getElementById("zip_length");
 
-nameReport = document.getElementById("name_report");
-userNameReport = document.getElementById("username_report");
-mailReport = document.getElementById("mail_report");
-addressReport = document.getElementById("address_report");
-zipReport = document.getElementById("zip_report");
-stateReport = document.getElementById("state_report");
-countryReport = document.getElementById("country_report");
+var nameReport = document.getElementById("name_report");
+var userNameReport = document.getElementById("username_report");
+var mailReport = document.getElementById("mail_report");
+var addressReport = document.getElementById("address_report");
+var zipReport = document.getElementById("zip_report");
+var stateReport = document.getElementById("state_report");
+var countryReport = document.getElementById("country_report");
 
-map = document.getElementById("map");
+var map = document.getElementById("map");
 
 fields = [
   fullName,
@@ -126,13 +130,10 @@ function val_inputs_add(evt) {
     count += 1;
   }
 
-  if (count == 0) {
+  if(count == 0){
+    formAddress.className = "hidden";
+    formCheck.className = "show";
     map.className = "show";
-    sendAddress.addEventListener("click", () => {
-      formAddress.className = "hidden";
-      formReport.className = "show";
-      confetti.start();
-    }, false);
   }
 
   addressReport.innerHTML = "Address: " + address.value;
@@ -145,6 +146,37 @@ function val_inputs_add(evt) {
 
 send.addEventListener("click", val_inputs_cont, false);
 sendAddress.addEventListener("click", val_inputs_add, false);
+sendCheck.addEventListener(
+  "click",
+  (e) => {
+    document.getElementById("title").innerHTML = "Congratulations, your account has been created";
+    formCheck.removeChild(document.getElementById("btns"));
+    confetti.start();
+
+    e.preventDefault();
+  },
+  false
+);
+returnAddress.addEventListener(
+  "click",
+  (e) => {
+    formAddress.className = "show";
+    formCheck.className = "hidden";
+
+    e.preventDefault();
+  },
+  false
+);
+returnName.addEventListener(
+  "click",
+  (e) => {
+    formContact.className = "show";
+    formAddress.className = "hidden";
+
+    e.preventDefault();
+  },
+  false
+);
 
 for (let i = 0; i < fields.length; i++) {
   fields[i].addEventListener("click", () => {
