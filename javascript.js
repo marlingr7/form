@@ -59,6 +59,51 @@ fieldsNames = [
   "Zip Code",
 ];
 
+mapa = {
+  map: false,
+  marker: false,
+
+  initMap: function () {
+    mapa.map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 20.670177, lng: -103.342404 },
+      scrollwheel: true,
+      zoom: 12,
+      zoomControl: true,
+      rotateControl: false,
+      mapTypeControl: false,
+      streetViewControl: false,
+    });
+
+    // Creamos el marcador
+    mapa.marker = new google.maps.Marker({
+      position: { lat: 20.670177, lng: -103.342404 },
+      draggable: false,
+    });
+
+    // Le asignamos el mapa a los marcadores.
+    mapa.marker.setMap(mapa.map);
+  },
+
+  // función que se ejecuta al pulsar el botón buscar dirección
+  getCoords: function () {
+    // Creamos el objeto geodecoder
+    var geocoder = new google.maps.Geocoder();
+
+    if (address.value != "") {
+      // Llamamos a la función geodecode pasandole la dirección que hemos introducido en la caja de texto.
+      geocoder.geocode({ address: address }, function (results, status) {
+        if (status == "OK") {
+          // Posicionamos el marcador en las coordenadas obtenidas
+          mapa.marker.setPosition(results[0].geometry.location);
+          // Centramos el mapa en las coordenadas obtenidas
+          mapa.map.setCenter(mapa.marker.getPosition());
+          agendaForm.showMapaEventForm();
+        }
+      });
+    }
+  },
+};
+
 function val_inputs_cont(evt) {
   var hasError = false;
 
@@ -130,7 +175,7 @@ function val_inputs_add(evt) {
     count += 1;
   }
 
-  if(count == 0){
+  if (count == 0) {
     formAddress.className = "hidden";
     formCheck.className = "show";
     map.className = "show";
@@ -144,12 +189,14 @@ function val_inputs_add(evt) {
   evt.preventDefault();
 }
 
+mapa.getCoords();
 send.addEventListener("click", val_inputs_cont, false);
 sendAddress.addEventListener("click", val_inputs_add, false);
 sendCheck.addEventListener(
   "click",
   (e) => {
-    document.getElementById("title").innerHTML = "Congratulations, your account has been created";
+    document.getElementById("title").innerHTML =
+      "Congratulations, your account has been created";
     formCheck.removeChild(document.getElementById("btns"));
     confetti.start();
 

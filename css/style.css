@@ -202,7 +202,7 @@ hr {
   font-weight: bold;
 }
 
-form p{
+form p {
   height: 7%;
   margin: 10px 0 0 0;
   padding: 0;
@@ -224,7 +224,7 @@ form .name p {
   margin: 0;
 }
 
-input{
+input {
   height: 11%;
   width: 98%;
   margin: 0;
@@ -241,11 +241,10 @@ input{
   height: 11%;
 }
 
-.input_name input{
+.input_name input {
   height: 100%;
   width: 46%;
 }
-
 
 form .check {
   display: flex;
@@ -260,7 +259,6 @@ form .check .checkbox {
   background: white;
   border-color: rgba(208, 208, 208, 255);
   border-width: 0.2px;
-
 }
 
 form .check p {
@@ -299,7 +297,7 @@ form .zip {
   width: 50%;
 }
 
-form .btns{
+form .btns {
   width: 100%;
   height: 12%;
   display: flex;
@@ -307,7 +305,7 @@ form .btns{
   margin: 10px 0 60px 0;
 }
 
-form .all-info{
+form .all-info {
   width: 100%;
   height: 60%;
   display: flex;
@@ -315,7 +313,7 @@ form .all-info{
   align-items: center;
 }
 
-form .info{
+form .info {
   width: 60%;
   height: 100%;
   display: flex;
@@ -323,16 +321,16 @@ form .info{
   justify-content: space-around;
 }
 
-#form_check .btns{
+#form_check .btns {
   margin-bottom: 6px;
 }
 
-form .btns .submit{
+form .btns .submit {
   height: 100%;
   margin: 0;
 }
 
-iframe {
+#map {
   width: 40%;
   height: 100%;
 }
@@ -352,7 +350,6 @@ form input:focus {
   display: block;
 }
 
-
 span {
   color: red;
   font-size: 8px;
@@ -369,69 +366,66 @@ h2 {
 }
 
 @media screen and (max-width: 1000px) {
-  .description{
+  .description {
     width: 30%;
     height: 90%;
   }
 
-  .data{
+  .data {
     width: 60%;
     height: 90%;
   }
 
-  .cont_forms{
+  .cont_forms {
     width: 55%;
   }
 }
 
 @media screen and (max-width: 850px) {
-  .description{
+  .description {
     width: 35%;
     height: 100%;
   }
 
-  .data{
+  .data {
     width: 65%;
     height: 100%;
   }
 
-  .cont_forms{
+  .cont_forms {
     width: 70%;
   }
 }
 
-
-
 @media screen and (max-width: 650px) {
-  .description{
-    width: 40%;;
+  .description {
+    width: 40%;
   }
 
-  .data{
+  .data {
     width: 60%;
   }
 
-  .cont_forms{
+  .cont_forms {
     width: 90%;
   }
 }
 
-@media screen and (max-width:500px) {
-
-  body{
+@media screen and (max-width: 500px) {
+  body {
     flex-direction: column;
     height: 200%;
   }
 
-  .description{
+  .description {
     width: 100%;
   }
 
-  .data{
+  .data {
     width: 100%;
   }
 
-  .cont_forms{
+  .cont_forms {
     width: 70%;
   }
 }
